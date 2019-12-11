@@ -1,0 +1,14 @@
+{% extends 'first_ap/base.html' %}
+{% block content %}
+<h1>first_ap Detail</h1>
+
+<hr>
+<a href="{% url 'first_ap:first_a_create' %}">Create</a>
+<hr>
+<p>{{first_a.name}}</p>
+<p>{{first_a.slug}}</p>
+<a href="{% url 'first_ap:first_a_update' slug=first_a.slug %}">Update</a>
+
+<a href="{% url 'first_ap:first_a_delete' slug=first_a.slug %}">Delete</a>
+
+{% endblock %}

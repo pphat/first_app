@@ -1,0 +1,15 @@
+{% extends 'first_ap/base.html' %}
+{% block content %}
+<h1>first_ap List</h1>
+<hr>
+<a href="{% url 'first_ap:first_a_create' %}">Create</a>
+<hr>
+{% if first_a_list %}
+	{% for first_a in first_a_list %}
+		<a href="{% url 'first_ap:first_a_detail' slug=first_a.slug %}"><p>{{first_a.slug}}</p></a>
+		<p>{{first_a.name}}</p>
+	{% endfor %}
+{% else %}
+<p>No Locations</p>
+{% endif %}
+{% endblock %}
